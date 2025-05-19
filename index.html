@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gestión de Membresías - Gimnasio</title>
+        <!-- <link rel="icon" href="img/logo-ico.ico" type="image/x-icon"> -->
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <h2>Gestión de Clientes - Radical Training</h2>
+
+        <div class="form-box">
+            <label>Cédula:</label>
+            <input type="text" id="cedula" placeholder="Ingrese cédula"
+                required>
+            <!-- <input type="text" id="cedula" required> -->
+            <button type="button" onclick="buscarCliente()">🔍 Buscar
+                cliente</button>
+
+            <div class="search-by-apellido">
+                <label>Apellido:</label>
+                <input type="text" id="apellidoBusqueda">
+                <button type="button" onclick="buscarClientePorApellido()">🔍
+                    Buscar por Apellido</button>
+                <div id="resultadosBusquedaApellido"></div>
+            </div>
+
+            <form id="registro">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Teléfono:</label>
+                        <input type="text" id="telefono">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Fecha de nacimiento:</label>
+                        <input type="date" id="fechaNacimiento">
+                    </div>
+                    <div class="input-group">
+                        <label>Edad:</label>
+                        <input type="number" id="edad" readonly>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Sexo:</label>
+                        <select id="sexo">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Tipo de plan:</label>
+                        <select id="plan">
+                            <option value="1">Quincena</option>
+                            <option value="2">Mensual</option>
+                            <option value="3">Bimestral</option>
+                            <option value="4">Trimestral</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Fecha de ingreso:</label>
+                        <input type="date" id="fechaIngreso" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Valor pagado:</label>
+                        <input type="number" id="valorPagado" required>
+                    </div>
+                </div>
+                <button type="submit">💾 Registrar / Actualizar</button>
+            </form>
+
+        </div>
+
+        <div class="result-box">
+            <h3>Resultado:</h3>
+            <p id="resultado"></p>
+        </div>
+
+        <div class="alertas-box">
+            <h3>🔔 Clientes que vencen mañana</h3>
+            <div id="vencenManana"></div>
+        </div>
+
+        <script type="module" src="js/index.js"></script>
+        <script type="module" src="js/firebase-config.js"></script>
+    </body>
+</html>
