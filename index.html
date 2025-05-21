@@ -3,25 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>Gestión de Membresías - Gimnasio</title>
-        <!-- <link rel="icon" href="img/logo-ico.ico" type="image/x-icon"> -->
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <h2>Gestión de Clientes - Radical Training</h2>
 
         <div class="form-box">
-            <label>Cédula:</label>
-            <input type="text" id="cedula" placeholder="Ingrese cédula"
+            <label>Teléfono (para búsqueda):</label>
+            <input type="text" id="telefonoBusqueda"
+                placeholder="Ingrese número de teléfono"
                 required>
-            <!-- <input type="text" id="cedula" required> -->
             <button type="button" onclick="buscarCliente()">🔍 Buscar
                 cliente</button>
 
             <div class="search-by-apellido">
-                <label>Apellido:</label>
+                <label>Buscar por nombre/apellido:</label>
                 <input type="text" id="apellidoBusqueda">
                 <button type="button" onclick="buscarClientePorApellido()">🔍
-                    Buscar por Apellido</button>
+                    Buscar cliente</button>
                 <div id="resultadosBusquedaApellido"></div>
             </div>
 
@@ -33,8 +32,7 @@
                     </div>
                     <div class="input-group">
                         <label>Teléfono:</label>
-                        <input type="text" id="telefono">
-                    </div>
+                        <input type="text" id="telefono" required> </div>
                 </div>
 
                 <div class="input-row">
