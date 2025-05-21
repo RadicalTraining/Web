@@ -10,6 +10,8 @@ body {
     padding: 20px;
     margin: 0;
     color: #2c3e50;
+    /* Aseguramos que el body no tenga un ancho fijo que pueda causar scroll horizontal */
+    overflow-x: hidden;
 }
 
 h2 {
@@ -33,32 +35,17 @@ label {
     display: block;
 }
 
-/* Inicio Botón eliminar */
-
-/* .eliminar {
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.eliminar:hover {
-    background-color: #c9302c;
-} */
-
-/* Fin botón eliminar */
-
 .input-row {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    /* Mantiene el wrap para que los elementos se apilen en pantallas pequeñas */
 }
 
 .input-group {
     flex: 1;
     min-width: 200px;
+    /* Asegura que cada grupo de input tenga un mínimo de ancho */
 }
 
 input, select {
@@ -69,6 +56,14 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: 0.3s;
+    /* Ajustes para táctil */
+    -webkit-appearance: none;
+    /* Evita estilos nativos en iOS */
+    -moz-appearance: none;
+    /* Evita estilos nativos en Firefox */
+    appearance: none;
+    touch-action: manipulation;
+    /* Mejora la respuesta táctil */
 }
 
 input:focus, select:focus {
@@ -87,6 +82,9 @@ button {
     transition: 0.3s;
     width: 100%;
     margin-top: 10px;
+    /* Ajustes para táctil */
+    -webkit-tap-highlight-color: transparent;
+    /* Elimina el resplandor azul al tocar en iOS */
 }
 
 button:hover {
@@ -119,17 +117,77 @@ button:hover {
     background-color: #1ebe5d;
 }
 
+/* Media Query para pantallas pequeñas */
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+        /* Reduce el padding general del body */
+    }
+
     form, .form-box, .result-box, .alertas-box {
         padding: 15px;
-        margin: 10px;
+        /* Reduce el padding interno de las cajas */
+        margin: 10px auto;
+        /* Centra las cajas con un margen más pequeño */
+        border-radius: 10px;
+        /* Bordes un poco menos redondeados si se desea */
+    }
+
+    h2 {
+        font-size: 22px;
+        /* Un poco más pequeño el título */
     }
 
     .input-row {
         flex-direction: column;
+        /* Apila los inputs verticalmente */
+        gap: 0;
+        /* Elimina el gap horizontal cuando están apilados */
+    }
+
+    .input-group {
+        min-width: unset;
+        /* Permite que el ancho se ajuste al 100% en columnas */
+        width: 100%;
+        /* Asegura que cada input-group ocupe todo el ancho disponible */
+        margin-bottom: 5px;
+        /* Espacio entre los grupos de input apilados */
+    }
+
+    label {
+        margin-top: 10px;
+        /* Mantener un buen margen superior para las etiquetas */
+        margin-bottom: 5px;
+        /* Reducir el margen inferior de las etiquetas */
+    }
+
+    input, select {
+        margin-bottom: 10px;
+        /* Espacio entre inputs */
+        padding: 12px;
+        /* Aumenta un poco el padding de los inputs para facilitar el toque */
+        font-size: 16px;
+        /* Asegura un tamaño de fuente legible */
     }
 
     button {
-        padding: 12px;
+        padding: 14px;
+        /* Aumenta un poco el padding de los botones para facilitar el toque */
+        font-size: 17px;
+        /* Tamaño de fuente legible en botones */
+        margin-top: 15px;
+        /* Más espacio sobre los botones */
+    }
+
+    .search-by-apellido {
+        margin-top: 20px;
+        /* Ajusta el margen superior del bloque de búsqueda por apellido */
+    }
+
+    #resultadosBusquedaApellido li {
+        font-size: 14px;
+        /* Tamaño de fuente para los elementos de la lista de resultados */
+        padding: 8px;
+        /* Padding para hacerlos más fáciles de tocar */
     }
 }
