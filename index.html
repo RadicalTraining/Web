@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gestión de Clientes - Gimnasio</title>
+        <title>Gestión de Clientes - Gimnasio Radical Training</title>
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
@@ -18,7 +18,7 @@
                 cliente</button>
 
             <div class="search-by-apellido">
-                <label>Apellido:</label>
+                <label>Nombre/Apellido:</label>
                 <input type="text" id="apellidoBusqueda">
                 <button type="button" onclick="buscarClientePorApellido()">🔍
                     Buscar por Nombre/Apellido</button>
@@ -70,7 +70,7 @@
 
                 <div class="input-row">
                     <div class="input-group">
-                        <label>Fecha de ingreso:</label>
+                        <label>Fecha de ingreso (Pago):</label>
                         <input type="date" id="fechaIngreso" required>
                     </div>
                     <div class="input-group">
@@ -80,6 +80,17 @@
                 </div>
                 <button type="submit">💾 Registrar / Actualizar</button>
             </form>
+
+            <div class="reporte-excel-box">
+                <h3>📊 Generar Reporte de Pagos</h3>
+                <label for="fechaInicioReporte">Fecha de Inicio:</label>
+                <input type="date" id="fechaInicioReporte">
+                <label for="fechaFinReporte">Fecha Fin:</label>
+                <input type="date" id="fechaFinReporte">
+                <button type="button" onclick="generarReporteExcel()">Descargar
+                    Reporte Excel</button>
+                <p id="mensajeReporte"></p>
+            </div>
 
         </div>
 
@@ -93,6 +104,7 @@
             <div id="vencenManana"></div>
         </div>
 
+        <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
         <script type="module" src="js/index.js"></script>
         <script type="module" src="js/firebase-config.js"></script>
     </body>
