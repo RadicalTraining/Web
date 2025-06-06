@@ -126,10 +126,12 @@ document.getElementById("registro").addEventListener("submit", async function (e
     let diasAAgregar = 0;
 
     switch (plan) {
-        case 1: diasAAgregar = 15; break; // Quincenal
-        case 2: diasAAgregar = 30; break; // Mensual
-        case 3: diasAAgregar = 60; break; // Bimestral
-        case 4: diasAAgregar = 90; break; // Trimestral
+        case 1: diasAAgregar = 1; break; // Clase
+        case 2: diasAAgregar = 7; break; // Semanal
+        case 3: diasAAgregar = 15; break; // Quincenal
+        case 4: diasAAgregar = 30; break; // Mensual
+        case 5: diasAAgregar = 60; break; // Bimestral
+        case 6: diasAAgregar = 90; break; // Trimestral
     }
 
     fechaVencimiento.setDate(fechaVencimiento.getDate() + diasAAgregar);
