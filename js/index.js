@@ -276,10 +276,12 @@ window.generarReporteExcel = async function () {
                     cliente.edad || "",
                     cliente.sexo || "",
                     // Mapear el valor numérico del plan a su descripción
-                    cliente.plan === 1 ? "Quincenal" :
-                        cliente.plan === 2 ? "Mensual" :
-                            cliente.plan === 3 ? "Bimestral" :
-                                cliente.plan === 4 ? "Trimestral" : "Desconocido",
+                    cliente.plan === 1 ? "Clase" :
+                        cliente.plan === 2 ? "Semanal" :                    
+                           cliente.plan === 3 ? "Quincenal" :
+                               cliente.plan === 4 ? "Mensual" :
+                                  cliente.plan === 5 ? "Bimestral" :
+                                     cliente.plan === 6 ? "Trimestral" : "Desconocido",
                     cliente.valorPagado || 0,
                     cliente.fechaIngreso || "",
                     cliente.fechaVencimiento || ""
